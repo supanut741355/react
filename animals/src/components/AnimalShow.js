@@ -29,9 +29,14 @@ export const AnimalShow = (props) => {
 
   const {type} = props
   return (
-    <div>
-      <img alt="animal" src={svgMap[type]} onClick={handlerHeartClick}/>
+    <div className='animal-show'>
       <img 
+      className='animal'
+      alt="animal" src={svgMap[type]} 
+      onClick={handlerHeartClick}
+      />
+      <img 
+        className='heart'
         alt='heart' 
         src={heart} 
         style={{

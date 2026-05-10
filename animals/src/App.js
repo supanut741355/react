@@ -3,7 +3,7 @@ import { AnimalShow } from "./components/AnimalShow";
 import './App.css'
 
 function getRandomAnimal() {
-  const animals = ['bird', 'cat', 'cow', 'ant', 'bat', 'horse']
+  const animals = ['bird', 'cat', 'cow', 'gator', 'dog', 'horse']
   return animals[Math.floor(Math.random() * animals.length)]
 }
 
@@ -20,8 +20,12 @@ function App() {
   })
   return (
     <div className="app">
-      <button onClick={handleAddAnimal}>Add animal</button>
-      {renderAnimal}
+      <button 
+        onClick={handleAddAnimal}
+      >Add animal</button>
+      <div className="animal-list">
+        {renderAnimal}
+      </div>
     </div>
   )  
 }
