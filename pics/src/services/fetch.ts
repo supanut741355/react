@@ -11,7 +11,7 @@ const searchImages = async (keyword: string) => {
     }
   })
   console.log(response)
-  return response
+  return response.data.results
 }
 
 export default searchImages

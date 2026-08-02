@@ -1,8 +1,8 @@
-function ImageShow() {
+function ImageShow({image}) {
 
   return (
     <div>
-    ImageShow
+      <img src={image}/>
     </div>
   )
 }
