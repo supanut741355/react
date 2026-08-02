@@ -1,3 +1,4 @@
+import '../style/imageList.css'
 import ImageShow from "./ImageShow"
 function ImageList({searchData}) {
 
@@ -6,9 +7,9 @@ function ImageList({searchData}) {
   })
 
   return (
-    <>
+    <div className="image-list">
       {renderedImages}
-    </>
+    </div>
   )
 }
 
