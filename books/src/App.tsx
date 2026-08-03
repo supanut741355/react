@@ -8,14 +8,16 @@ function App() {
 
   const handleCreateBook = (newBook) => {
     setBooks(books => [...books, newBook])
-    
-    console.log(books);
+  }
+
+  const handleDeleteBook = (bookName) => {
+    setBooks(books => books.filter(book => book !== bookName));
   }
 
   return (
     <>
       <BookCreate onCreateBook={handleCreateBook}/>
-      <BookList books={books}/>
+      <BookList books={books} onDeleteBook={handleDeleteBook}/>
     </>
   )
 }
