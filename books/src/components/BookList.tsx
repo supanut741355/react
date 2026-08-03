@@ -1,8 +1,11 @@
+import '../style/bookList.css'
+import BookShow from "./BookShow"
+
 const BookList = ({books}) => {
   return (
-    <div>
+    <div className="books-list">
       {books.map((item, idx) => {
-        return <p key={idx}>{item}</p>
+        return <BookShow key={idx} book={item}/>
       })}
     </div>
   )

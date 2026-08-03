@@ -1,0 +1,8 @@
+.card {
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
