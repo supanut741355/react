@@ -1,5 +1,5 @@
 ```
-  npm create vite@latest
+npm create vite@latest
 ```
 ---
 # pdas
