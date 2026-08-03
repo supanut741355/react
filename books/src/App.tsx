@@ -14,10 +14,18 @@ function App() {
     setBooks(books => books.filter(book => book !== bookName));
   }
 
+  const handleEditBook = (bookName, newBookName) => {
+    setBooks(prev =>
+      prev.map(book =>
+        book === bookName ? newBookName : book
+      )
+    );
+  }
+
   return (
     <>
       <BookCreate onCreateBook={handleCreateBook}/>
-      <BookList books={books} onDeleteBook={handleDeleteBook}/>
+      <BookList books={books} onDeleteBook={handleDeleteBook} onEditBook={handleEditBook}/>
     </>
   )
 }
