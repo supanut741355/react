@@ -1,3 +1,7 @@
+```
+  npm create vite@latest
+```
+---
 # pdas
 
 
@@ -8,3 +12,10 @@ topics:
 - Event system
 - State system
 - Re rendering 
+
+# Pics
+
+
+
+# book
+
