@@ -1,7 +1,9 @@
-const BookList = () => {
+const BookList = ({books}) => {
   return (
     <div>
-      BookList
+      {books.map((item, idx) => {
+        return <p key={idx}>{item}</p>
+      })}
     </div>
   )
 }

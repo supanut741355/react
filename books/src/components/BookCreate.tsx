@@ -11,14 +11,17 @@ const BookCreate = ({onCreateBook}) => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
     onCreateBook(book)
+    setBook('')
   }
 
   return (
     <div>
-      BookCreate
+      <h1>Add a Book</h1>
       <form onSubmit={handleFormSubmit}>
+        <p>Title</p>
         <input value={book} onChange={handleOnChange}/>
-        <button>Add</button>
+        <br/>
+        <button>Submit</button>
       </form>
     </div>
   )

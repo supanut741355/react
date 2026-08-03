@@ -1,5 +1,6 @@
 import { useState } from "react"
 import BookCreate from "./components/BookCreate"
+import BookList from "./components/BookList"
 
 function App() {
 
@@ -14,9 +15,7 @@ function App() {
   return (
     <>
       <BookCreate onCreateBook={handleCreateBook}/>
-      {books.map( (item) => {
-        return <p>{item}</p>
-      })}
+      <BookList books={books}/>
     </>
   )
 }
