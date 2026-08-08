@@ -1,25 +1,27 @@
 import { useState } from "react"
+import BookEdit from "./components/BookEdit";
 
-interface Book {
+export interface Book {
   id: number;
   title: string;
 }
 
 function App() {
 
-  const [books, setBooks] = useState<Book[]>([
-    {id: 1, title: 'ant'},
-    {id: 2, title: 'bat'},
-    {id: 3, title: 'cat'}
-  ])
-
+  const [books, setBooks] = useState<Book[]>([])
+  const handleCreateBook = (newBook: Book) => {
+    console.log('handleCreateBook call');
+    
+    setBooks([...books, newBook])
+  }
 
 
   return (
     <>
       {books.map((item) => {
-        return <p key={item.id}>{item.title}</p>
+        return <p key={item.id}>{item.id} {item.title}</p>
       })}
+      <BookEdit onCreateBook={handleCreateBook}/>
     </>
   )
 }
