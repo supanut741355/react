@@ -1,6 +1,6 @@
 import { useState } from "react"
-import BookEdit from "./components/BookEdit";
-
+import BookCreate from "./components/BookCreate";
+import './index.css'
 export interface Book {
   id: number;
   title: string;
@@ -15,13 +15,14 @@ function App() {
     setBooks([...books, newBook])
   }
 
+  const tmpRenderBooks = books.map((item) => {
+    return <p key={item.id}>{item.id} {item.title}</p>
+  })
 
   return (
     <>
-      {books.map((item) => {
-        return <p key={item.id}>{item.id} {item.title}</p>
-      })}
-      <BookEdit onCreateBook={handleCreateBook}/>
+      {tmpRenderBooks}
+      <BookCreate onCreateBook={handleCreateBook}/>
     </>
   )
 }
