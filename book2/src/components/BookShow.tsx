@@ -1,9 +1,11 @@
-function BookShow() {
+import type { Book } from "../App"
+
+function BookShow({book}: {book: Book}) {
 
   return (
-    <>
-      BookShow
-    </>
+    <div className="book-show">
+      {book.title}
+    </div>
   )
 }
 
