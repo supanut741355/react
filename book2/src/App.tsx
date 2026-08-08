@@ -10,9 +10,8 @@ function App() {
 
   const [books, setBooks] = useState<Book[]>([])
   const handleCreateBook = (newBook: Book) => {
-    console.log('handleCreateBook call');
-    
-    setBooks([...books, newBook])
+    const updatedBook = [...books, newBook]    
+    setBooks(updatedBook)
   }
 
   const tmpRenderBooks = books.map((item) => {
