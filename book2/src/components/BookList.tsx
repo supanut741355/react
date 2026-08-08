@@ -1,10 +1,9 @@
-import type { Book } from "../App"
 import BookShow from "./BookShow"
 
-function BookList({books}: {books: Book[]}) {
+function BookList({books, onDeleteBook}) {
 
   const renderedBooks = books.map((item) => {
-    return <BookShow key={item.id} book={item}/>
+    return <BookShow key={item.id} book={item} onDeleteBook={onDeleteBook}/>
   })
 
   return (

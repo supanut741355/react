@@ -1,10 +1,15 @@
-import type { Book } from "../App"
+function BookShow({book, onDeleteBook}) {
 
-function BookShow({book}: {book: Book}) {
+  const handleDeleteBook = () => {
+    onDeleteBook(book.id)
+  }
 
   return (
     <div className="book-show">
       {book.title}
+      <div className="actions">
+        <button className="delete" onClick={handleDeleteBook}>X</button>
+      </div>
     </div>
   )
 }

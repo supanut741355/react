@@ -14,14 +14,16 @@ function App() {
     const updatedBook = [...books, newBook]    
     setBooks(updatedBook)
   }
-
-  const tmpRenderBooks = books.map((item) => {
-    return <p key={item.id}>{item.id} {item.title}</p>
-  })
+  const handleDeleteBookById = (id: number) => {
+    const updatedBook = books.filter((item) => {
+      return item.id !== id
+    })
+    setBooks(updatedBook)
+  }
 
   return (
     <div className="app">
-      <BookList books={books}/>
+      <BookList books={books} onDeleteBook={handleDeleteBookById}/>
       <BookCreate onCreateBook={handleCreateBook}/>
     </div>
   )
