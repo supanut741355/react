@@ -13,9 +13,14 @@ function BookShow({book, onDeleteBook, onEditBook}) {
     setShowEdit(!showEdit) 
   } 
 
+  const handleSubmit = (id: number, title: string) => {
+    setShowEdit(false) 
+    onEditBook(id, title)
+  }
+
   let content = <h3>{book.title}</h3>
   if (showEdit){
-    content = <BookEdit handleShowEdit={handleShowEdit} currentBook={book} onEditBook={onEditBook}/>
+    content = <BookEdit currentBook={book} onSubmit={handleSubmit}/>
   }
 
 
