@@ -1,6 +1,7 @@
 import { useState } from "react"
 import BookCreate from "./components/BookCreate";
 import './index.css'
+import BookList from "./components/BookList";
 export interface Book {
   id: number;
   title: string;
@@ -19,10 +20,10 @@ function App() {
   })
 
   return (
-    <>
-      {tmpRenderBooks}
+    <div className="app">
+      <BookList books={books}/>
       <BookCreate onCreateBook={handleCreateBook}/>
-    </>
+    </div>
   )
 }
 
