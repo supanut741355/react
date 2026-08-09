@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import BookCreate from "./components/BookCreate";
 import './index.css'
 import BookList from "./components/BookList";
@@ -12,7 +12,20 @@ function App() {
 
   const [books, setBooks] = useState<Book[]>([])
 
+
+
+
   const url = 'http://localhost:3001'
+
+
+  
+  useEffect( () => {
+    const fetchBooks = async() => {
+      const resposen = await axios.get(`${url}/books`)
+      setBooks(resposen.data)
+    }
+    fetchBooks()
+  }, [])
 
   const handleCreateBook = async (newBook: Book) => {
 
@@ -23,6 +36,8 @@ function App() {
     setBooks(updatedBook)
     
   }
+
+  
 
 
 
