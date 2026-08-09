@@ -2,6 +2,7 @@ import { useState } from "react"
 import BookCreate from "./components/BookCreate";
 import './index.css'
 import BookList from "./components/BookList";
+import axios from "axios";
 export interface Book {
   id: number;
   title: string;
@@ -10,10 +11,21 @@ export interface Book {
 function App() {
 
   const [books, setBooks] = useState<Book[]>([])
-  const handleCreateBook = (newBook: Book) => {
-    const updatedBook = [...books, newBook]    
+
+  const url = 'http://localhost:3001'
+
+  const handleCreateBook = async (newBook: Book) => {
+
+    const response = await axios.post(`${url}/books`, {
+      title: newBook.title
+    })
+    const updatedBook = [...books, response.data]    
     setBooks(updatedBook)
+    
   }
+
+
+
   const handleDeleteBookById = (id: number) => {
     const updatedBook = books.filter((item) => {
       return item.id !== id
