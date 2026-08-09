@@ -48,10 +48,13 @@ function App() {
     setBooks(updatedBook)
   }
 
-  const handleEditBookById = (id: number, newTitle: string) => {
+  const handleEditBookById = async(id: number, newTitle: string) => {
+    const response = await axios.put(`${url}/books/${id}`, {
+      title: newTitle
+    })
     const updatedBook = books.map( (item) => {
       if(item.id === id) {
-        return {...item, title: newTitle}
+        return {...item, ...response.data}
       }
       return item
     })
