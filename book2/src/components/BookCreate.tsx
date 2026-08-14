@@ -2,10 +2,6 @@ import { useContext, useState } from "react"
 import type { Book } from "../App"
 import BookContext from "../contexts/books"
 
-// interface BookCreateProp {
-//   onCreateBook: (newBook: Book) => void
-// }
-
 function BookCreate() {
   const {handleCreateBook} = useContext(BookContext)
   const [newBook, setNewbook] = useState<Book>({id:0, title: ''})
@@ -20,7 +16,6 @@ function BookCreate() {
     handleCreateBook(newBook)
     setNewbook({id: 0, title: ''})
   }
-
 
   return (
     <div className="book-create">
