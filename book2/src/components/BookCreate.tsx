@@ -1,12 +1,13 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import type { Book } from "../App"
+import BookContext from "../contexts/books"
 
-interface BookCreateProp {
-  onCreateBook: (newBook: Book) => void
-}
+// interface BookCreateProp {
+//   onCreateBook: (newBook: Book) => void
+// }
 
-function BookCreate(props: BookCreateProp) {
-  const {onCreateBook} = props
+function BookCreate() {
+  const {handleCreateBook} = useContext(BookContext)
   const [newBook, setNewbook] = useState<Book>({id:0, title: ''})
 
   const handleOnChange = (event) => {
@@ -16,7 +17,7 @@ function BookCreate(props: BookCreateProp) {
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
-    onCreateBook(newBook)
+    handleCreateBook(newBook)
     setNewbook({id: 0, title: ''})
   }
 

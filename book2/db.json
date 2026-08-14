@@ -1,21 +1,4 @@
 {
-  "books": [
-    {
-      "title": "ddd",
-      "id": "jyCSDuppG-g"
-    },
-    {
-      "title": "ccc",
-      "id": "zgpboYiME_Y"
-    },
-    {
-      "title": "zzz",
-      "id": "Pax-Bc3H4Cw"
-    },
-    {
-      "title": "ttt",
-      "id": "99jOyj0nSU8"
-    }
-  ],
+  "books": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
