@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import { type Book } from "../App";
 import axios from "axios";
 interface BookContextType {
@@ -15,10 +15,12 @@ const url = 'http://localhost:3001'
 const Provider = ({children}) => {
 
   const [books, setBooks] = useState<Book[]>([])
-  const fetchBooks = async() => {
+  const fetchBooks = useCallback(async() => {
     const resposen = await axios.get(`${url}/books`)
     setBooks(resposen.data)
-  }
+  },[])
+
+
 
   const handleCreateBook = async (newBook: Book) => {
     const response = await axios.post(`${url}/books`, {

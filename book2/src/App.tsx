@@ -14,7 +14,7 @@ function App() {
 
   useEffect( () => {
     fetchBooks()
-  }, [])
+  }, [fetchBooks])
 
   return (
     <div className="app">
@@ -26,3 +26,6 @@ function App() {
 }
 
 export default App
+
+// somewhere in memory
+// swim
