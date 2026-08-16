@@ -11,17 +11,19 @@ function Button({
   outline
 }) {
   
-  const finalClassName = classNames('px-5', 'py-3', 'border', 'text-white',  {
-    'bg-blue-500': primary,
-    'bg-black': secondary,
+  const className = classNames('px-5', 'py-3',  {
+    'bg-blue-500 border border-blue-600 text-white': primary,
+    'bg-black text-white': secondary,
     'bg-yellow-500': warn,
     'bg-green-500': success,
     'bg-red-500': danger,
+    'rounded-xl ':rounded,
+    'outline-1': outline
   })
 
   return (
     <div>
-      <button className={finalClassName}>{children}</button>
+      <button className={className}>{children}</button>
     </div>
   )
 }
