@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import classNames  from 'classnames'
 function Button({
   children,
   primary,
@@ -10,10 +11,17 @@ function Button({
   outline
 }) {
   
+  const finalClassName = classNames('px-5', 'py-3', 'border', 'text-white',  {
+    'bg-blue-500': primary,
+    'bg-black': secondary,
+    'bg-yellow-500': warn,
+    'bg-green-500': success,
+    'bg-red-500': danger,
+  })
 
   return (
     <div>
-      <button className="px-5 py-1.5 bg-blue-500 border border-blue-600 text-white">{children}</button>
+      <button className={finalClassName}>{children}</button>
     </div>
   )
 }
