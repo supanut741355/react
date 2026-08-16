@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import classNames  from 'classnames'
+
 function Button({
   children,
   primary,
@@ -8,10 +9,12 @@ function Button({
   warn,
   danger,
   rounded,
-  outline
+  outline,
+  onClick,
+  onMouseOver
 }) {
   
-  const className = classNames('px-5', 'py-3',  {
+  const className = classNames('px-5', 'py-3', 'flex', 'items-center',  {
     'bg-blue-500 border border-blue-600 text-white': primary,
     'bg-black text-white': secondary,
     'bg-yellow-500': warn,
@@ -23,7 +26,9 @@ function Button({
 
   return (
     <div>
-      <button className={className}>{children}</button>
+      <button className={className} onClick={onClick} onMouseOver={onMouseOver}>
+        {children}
+      </button>
     </div>
   )
 }
