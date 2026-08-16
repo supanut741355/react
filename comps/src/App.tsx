@@ -4,7 +4,11 @@ function App() {
 
   return (
     <>
-      <Button children="yo"/>
+      <Button primary secondary >Primary</Button>
+      <Button secondary round>Secondary</Button>
+      <Button success rounded outline>Success</Button>
+      <Button warn>Warn</Button>
+      <Button danger outline>Danger</Button>
     </>
   )
 }
