@@ -10,8 +10,7 @@ function Button({
   danger,
   rounded,
   outline,
-  onClick,
-  onMouseOver
+  ...rest
 }) {
   
   const className = classNames('px-5', 'py-3', 'flex', 'items-center',  {
@@ -23,6 +22,8 @@ function Button({
     'rounded-xl ':rounded,
     'outline-1': outline
   })
+
+  const {onClick, onMouseOver} = rest
 
   return (
     <div>
